@@ -1,0 +1,55 @@
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
+  theme: {
+    extend: {
+      fontFamily: {
+        sans: ['Inter', 'system-ui', 'sans-serif'],
+        display: ['Barlow', 'Inter', 'system-ui', 'sans-serif'],
+      },
+      colors: {
+        ink: {
+          50: '#f4f7f9',
+          100: '#e9eff4',
+          200: '#d6e0e8',
+          300: '#b5c6d3',
+          400: '#8aa2b5',
+          500: '#5a7c97',
+          600: '#3a6080',
+          700: '#24465f',
+          800: '#173247',
+          900: '#0f2133',
+          950: '#081421',
+        },
+        paper: {
+          50: '#fbfaf7',
+          100: '#f5f3ee',
+          200: '#e9e6de',
+          300: '#d6d1c4',
+          400: '#a8a294',
+          500: '#7d776a',
+          600: '#5f5a4f',
+          700: '#4a463e',
+          800: '#332f29',
+          900: '#1f1c18',
+        },
+        signal: {
+          50: '#fff4ec',
+          100: '#ffe4d1',
+          200: '#ffc7a1',
+          300: '#ffa56a',
+          400: '#ff8a3d',
+          500: '#f5711c',
+          600: '#d9560b',
+          700: '#b0420a',
+          800: '#8a3410',
+          900: '#6e2c12',
+        },
+        success: { 50: '#ecfdf3', 500: '#12b76a', 700: '#067647' },
+        warning: { 50: '#fffaeb', 500: '#f79009', 700: '#b54708' },
+        error: { 50: '#fef3f2', 500: '#f04438', 700: '#b42318' },
+      },
+    },
+  },
+  plugins: [],
+};

@@ -1,0 +1,82 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body {
+    @apply bg-paper-50 font-sans leading-[1.5] text-ink-900;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display leading-[1.06] tracking-[-0.01em];
+  }
+
+  :focus-visible {
+    @apply outline-none ring-2 ring-signal-500 ring-offset-2 ring-offset-paper-50;
+  }
+}
+
+@layer components {
+  .eyebrow {
+    @apply flex items-center gap-3 text-sm font-semibold text-signal-700;
+  }
+
+  .eyebrow::before {
+    content: '';
+    @apply h-px w-8 bg-signal-500;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-md bg-signal-500 px-6 py-3.5 font-semibold text-ink-950 transition duration-300 hover:bg-signal-400 hover:shadow-lg hover:shadow-signal-900/20 active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-60;
+  }
+
+  .btn-dark {
+    @apply inline-flex items-center justify-center gap-2 rounded-md bg-ink-900 px-6 py-3.5 font-semibold text-white transition duration-300 hover:bg-ink-800 active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-60;
+  }
+
+  .btn-light {
+    @apply inline-flex items-center justify-center gap-2 rounded-md border border-white/40 px-6 py-3.5 font-semibold text-white transition duration-300 hover:border-white hover:bg-white hover:text-ink-900 active:scale-[0.98];
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2 rounded-md border border-ink-900 px-6 py-3.5 font-semibold text-ink-900 transition duration-300 hover:bg-ink-900 hover:text-white active:scale-[0.98];
+  }
+
+  .field-input {
+    @apply w-full rounded-md border border-ink-200 bg-white px-4 py-3 text-ink-900 placeholder:text-ink-400 transition focus:border-ink-600 focus:outline-none focus:ring-2 focus:ring-signal-300;
+  }
+}
+
+@keyframes ken-burns {
+  from {
+    transform: scale(1.08);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+.animate-ken-burns {
+  animation: ken-burns 14s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
